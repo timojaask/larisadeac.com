@@ -1,7 +1,8 @@
-import './main.css';
-import { Main } from './Main.elm';
-import registerServiceWorker from './registerServiceWorker';
+'use strict';
 
-Main.embed(document.getElementById('root'));
+// Require index.html so it gets copied to dist
+require('./index.html');
 
-registerServiceWorker();
+var Elm = require('./Main.elm');
+var mountNode = document.getElementById('main');
+var app = Elm.Main.embed(mountNode);
